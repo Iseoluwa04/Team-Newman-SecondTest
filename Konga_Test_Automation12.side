@@ -1,0 +1,480 @@
+{
+  "id": "3b61672c-97e7-4865-9cf0-304956a44ffe",
+  "version": "2.0",
+  "name": "Konga_Test_Automation",
+  "url": "https://www.konga.com/",
+  "tests": [{
+    "id": "1dc9d6ec-36bc-4d84-9b6b-c7b33cc013fa",
+    "name": "Untitled",
+    "commands": []
+  }, {
+    "id": "05578cf4-ced9-4c85-8a72-0d5679027fb5",
+    "name": "Card_invalidation",
+    "commands": [{
+      "id": "034ed9e6-c89d-489d-a3a6-cdcf67f7d497",
+      "comment": "Launches the Konga website in the browser.",
+      "command": "open",
+      "target": "https://www.konga.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2fe5ed9b-a8e7-4aff-abd5-10c53759a096",
+      "comment": "Sets the browser window to a standard desktop resolution.",
+      "command": "setWindowSize",
+      "target": "1280x672",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f65593ee-c418-425b-bc1e-68e69e5b92e0",
+      "comment": "Opens the login/sign-up page.",
+      "command": "click",
+      "target": "linkText=Login / Signup",
+      "targets": [
+        ["linkText=Login / Signup", "linkText"],
+        ["css=.DesktopNavigation_authLink__Zpjyj > .DesktopNavigation_searchBandIconLink__Nreez", "css:finder"],
+        ["xpath=//a[contains(text(),'Login / Signup')]", "xpath:link"],
+        ["xpath=//div[@id='nav-bar-fix']/div/div/div[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/account/login?return_url=/')]", "xpath:href"],
+        ["xpath=//div[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Login / Signup')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b4401c7e-9618-4bb4-a4fa-b6a0f5957aee",
+      "comment": "Places the cursor inside the email/username field.",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//main[@id='mainContent']/div/div/div[2]/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5edbd850-6e7a-432a-9ce6-f16fc0c88120",
+      "comment": "Enters the user’s email address",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//main[@id='mainContent']/div/div/div[2]/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "username@yopmail.com"
+    }, {
+      "id": "318e7376-5544-4e4a-abbc-641968d423d7",
+      "comment": "Focuses the password input field.",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//main[@id='mainContent']/div/div/div[2]/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "239d2342-c966-4237-b37a-42fddac7add4",
+      "comment": "Scrolls the page to the top to ensure visibility.",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "70865e7f-9084-4ec2-a594-edb2c8184b20",
+      "comment": "Enters the user’s password.",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//main[@id='mainContent']/div/div/div[2]/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Password"
+    }, {
+      "id": "ea492baa-2866-4d6f-918e-25a2a701317e",
+      "comment": "Clicks the Login button to sign in.",
+      "command": "click",
+      "target": "css=.button_button__cpnXl",
+      "targets": [
+        ["css=.button_button__cpnXl", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//main[@id='mainContent']/div/div/div[2]/div/form/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "76208b45-6456-4298-8aef-0815f9b76450",
+      "comment": "Scrolls back to the top after login.",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dbae8e9a-2db7-4a45-abc5-88ea8b56001f",
+      "comment": "Opens the product categories menu.",
+      "command": "click",
+      "target": "linkText=All Categories",
+      "targets": [
+        ["linkText=All Categories", "linkText"],
+        ["css=.DesktopNavigation_activeNavItem__o_xA7", "css:finder"],
+        ["xpath=//a[contains(text(),'All Categories')]", "xpath:link"],
+        ["xpath=//div[@id='nav-bar-fix']/div[2]/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//nav/div[3]/div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'All Categories')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2acdf508-c121-48b8-a13b-455720bb517a",
+      "comment": "Navigates to the MacBooks product category.",
+      "command": "click",
+      "target": "linkText=Macbooks",
+      "targets": [
+        ["linkText=Macbooks", "linkText"],
+        ["css=.DesktopNavigation_subCategorySection__H95KA:nth-child(1) > .DesktopNavigation_subCategorySectionChild__5kEvf:nth-child(6)", "css:finder"],
+        ["xpath=//a[contains(text(),'Macbooks')]", "xpath:link"],
+        ["xpath=//div[@id='subFixId']/div/div[2]/div/div/div/a[6]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/category/macbooks-5249')]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div/a[6]", "xpath:position"],
+        ["xpath=//a[contains(.,'Macbooks')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "afa94ee0-0595-4862-ae26-6e2bca0704ae",
+      "comment": "Scrolls to the top of the MacBooks page.",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "83993767-9591-4403-96d1-650ba8205cea",
+      "comment": "Ensures page position remains at the top.",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c09f6dca-679e-408e-ad18-c84eb4a3a3b1",
+      "comment": "Adds the first listed MacBook to the cart.",
+      "command": "click",
+      "target": "css=.List_listItem__KlvU2:nth-child(1) .button_button__cpnXl",
+      "targets": [
+        ["css=.List_listItem__KlvU2:nth-child(1) .button_button__cpnXl", "css:finder"],
+        ["xpath=(//button[@type='submit'])[5]", "xpath:attributes"],
+        ["xpath=//main[@id='mainContent']/section/section/section/section/section/section[2]/ul/li/article/div[2]/form/div/button", "xpath:idRelative"],
+        ["xpath=//article/div[2]/form/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add To Cart')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "56f167d2-28e2-4c26-8b1c-c33a70d2991b",
+      "comment": "Opens the shopping cart page.",
+      "command": "click",
+      "target": "id=validateCardForm",
+      "targets": [
+        ["id=validateCardForm", "id"],
+        ["css=#validateCardForm", "css:finder"],
+        ["xpath=//button[@id='validateCardForm']", "xpath:attributes"],
+        ["xpath=//div[@id='card-exists--false']/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pay Now')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "90a1a79b-0524-4a03-a8fb-902e6c43c1b8",
+      "comment": "Scrolls to the top of the cart page.",
+      "command": "click",
+      "target": "css=.DesktopNavigation_cartLink__yKozc",
+      "targets": [
+        ["css=.DesktopNavigation_cartLink__yKozc", "css:finder"],
+        ["xpath=//div[@id='nav-bar-fix']/div/div/a[3]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/cart/overview')])[3]", "xpath:href"],
+        ["xpath=//div[2]/nav/div[3]/div/div/a[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0b71dcc5-6a95-4eea-9848-99ec4238fc24",
+      "comment": "Ensures checkout options are visible",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e2fb055c-0a10-4eca-9e4a-f0c10e78e2cf",
+      "comment": "Ensures checkout options are visible.",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6fa944c6-2f62-4de3-ba0a-6cf4c7cedc32",
+      "comment": "Selects the Pay Now payment option (this step failed).",
+      "command": "click",
+      "target": "css=.paymentOptions_paymentOptionsContentPayNowHeader__eiuIT input",
+      "targets": [
+        ["css=.paymentOptions_paymentOptionsContentPayNowHeader__eiuIT input", "css:finder"],
+        ["xpath=//input[@value='kpaygateway']", "xpath:attributes"],
+        ["xpath=//main[@id='mainContent']/div/div[3]/div/section[2]/div/div[2]/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f78de615-8f6f-424b-804d-da8ea60b177a",
+      "comment": "Scrolls to the top of the payment page.",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "428d4529-ff3d-4a3e-8b67-23289b0b3318",
+      "comment": "Clicks the Place Order button to proceed.",
+      "command": "click",
+      "target": "name=placeOrder",
+      "targets": [
+        ["name=placeOrder", "name"],
+        ["css=.checkout_placeOrderButton__yJwNl", "css:finder"],
+        ["xpath=//button[@name='placeOrder']", "xpath:attributes"],
+        ["xpath=//main[@id='mainContent']/div/div[3]/div/section[2]/div/div[2]/div[3]/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Continue to Payment')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0e64bbb3-51b0-43f1-a51c-3a80d2c095d5",
+      "comment": "Switches control to the payment iframe.",
+      "command": "selectFrame",
+      "target": "index=15",
+      "targets": [
+        ["index=15"]
+      ],
+      "value": ""
+    }, {
+      "id": "987295bb-732c-471c-b9b0-306c6d7dd57b",
+      "comment": "Selects Card as the payment method.",
+      "command": "click",
+      "target": "css=.Card .payment-option-name",
+      "targets": [
+        ["css=.Card .payment-option-name", "css:finder"],
+        ["xpath=//div[@id='channel-template']/div[2]/div/div[2]/button/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/button/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Card')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "eb2d28a7-7ac2-4257-ae76-d775a28fb26f",
+      "comment": "Focuses the card number input field.",
+      "command": "click",
+      "target": "id=card-number",
+      "targets": [
+        ["id=card-number", "id"],
+        ["css=#card-number", "css:finder"],
+        ["xpath=//input[@id='card-number']", "xpath:attributes"],
+        ["xpath=//div[@id='input-card-no-container']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "643d78c2-5aeb-4e2e-a019-f1ad95dfe4b0",
+      "comment": "Enters an invalid card number.",
+      "command": "type",
+      "target": "id=card-number",
+      "targets": [
+        ["id=card-number", "id"],
+        ["css=#card-number", "css:finder"],
+        ["xpath=//input[@id='card-number']", "xpath:attributes"],
+        ["xpath=//div[@id='input-card-no-container']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "6789 0987 7665 4544 "
+    }, {
+      "id": "30bfe4a2-3338-4eda-ba52-e5a160a62d07",
+      "comment": "Focuses the card expiry date field.",
+      "command": "click",
+      "target": "id=expiry",
+      "targets": [
+        ["id=expiry", "id"],
+        ["css=#expiry", "css:finder"],
+        ["xpath=//input[@id='expiry']", "xpath:attributes"],
+        ["xpath=//div[@id='card-exists--false']/div/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c771e0f-c177-4b4f-922d-1520fd663722",
+      "comment": "Enters the card expiry date.",
+      "command": "type",
+      "target": "id=expiry",
+      "targets": [
+        ["id=expiry", "id"],
+        ["css=#expiry", "css:finder"],
+        ["xpath=//input[@id='expiry']", "xpath:attributes"],
+        ["xpath=//div[@id='card-exists--false']/div/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": "12/26"
+    }, {
+      "id": "2f6a1874-3a1a-45d3-854a-87de404cf439",
+      "comment": "Focuses the CVV field.",
+      "command": "click",
+      "target": "id=cvv",
+      "targets": [
+        ["id=cvv", "id"],
+        ["name=cvv", "name"],
+        ["css=#cvv", "css:finder"],
+        ["xpath=//input[@id='cvv']", "xpath:attributes"],
+        ["xpath=//div[@id='card-exists--false']/div/div[3]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "355dcfb8-ccbe-4cc0-93df-60b24f57d996",
+      "comment": "Enters the card CVV.",
+      "command": "type",
+      "target": "id=cvv",
+      "targets": [
+        ["id=cvv", "id"],
+        ["name=cvv", "name"],
+        ["css=#cvv", "css:finder"],
+        ["xpath=//input[@id='cvv']", "xpath:attributes"],
+        ["xpath=//div[@id='card-exists--false']/div/div[3]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": "546"
+    }, {
+      "id": "c3d9417c-f96c-4a2e-8b96-8c7276beb568",
+      "comment": "Attempts to focus the card PIN field.",
+      "command": "click",
+      "target": "id=card-pin-new",
+      "targets": [
+        ["id=card-pin-new", "id"],
+        ["css=#card-pin-new", "css:finder"],
+        ["xpath=//input[@id='card-pin-new']", "xpath:attributes"],
+        ["xpath=//div[@id='card-pin-holder']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "262b69d2-811d-41da-982a-5e41571c4fcd",
+      "comment": "Clicks outside the input fields to trigger validation.",
+      "command": "click",
+      "target": "css=.page-container",
+      "targets": [
+        ["css=.page-container", "css:finder"],
+        ["xpath=//section/section", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d76d5687-b73f-4c9e-97c6-40044e424521",
+      "comment": "Submits the card details for validation.",
+      "command": "click",
+      "target": "id=validateCardForm",
+      "targets": [
+        ["id=validateCardForm", "id"],
+        ["css=#validateCardForm", "css:finder"],
+        ["xpath=//button[@id='validateCardForm']", "xpath:attributes"],
+        ["xpath=//div[@id='card-exists--false']/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pay Now')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f895fb5-8569-44bb-a694-d0923896f00d",
+      "comment": "Selects the card number error container.",
+      "command": "click",
+      "target": "id=card-number_unhappy",
+      "targets": [
+        ["id=card-number_unhappy", "id"],
+        ["css=#card-number_unhappy", "css:finder"],
+        ["xpath=//label[@id='card-number_unhappy']", "xpath:attributes"],
+        ["xpath=//div[@id='input-card-no-container']/div[2]/label", "xpath:idRelative"],
+        ["xpath=//div[2]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Invalid card number')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "93091f37-29f6-4a9d-8466-260eaa3ddeff",
+      "comment": "Confirms the card is flagged as invalid.",
+      "command": "click",
+      "target": "css=#card-exists--false > .data-card__content",
+      "targets": [
+        ["css=#card-exists--false > .data-card__content", "css:finder"],
+        ["xpath=//div[@id='card-exists--false']/div", "xpath:idRelative"],
+        ["xpath=//form/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "01647320-40c0-41a7-9cdf-ae0695d98d97",
+      "comment": "Re-checks the invalid card field.",
+      "command": "click",
+      "target": "id=card-number_unhappy",
+      "targets": [
+        ["id=card-number_unhappy", "id"],
+        ["css=#card-number_unhappy", "css:finder"],
+        ["xpath=//label[@id='card-number_unhappy']", "xpath:attributes"],
+        ["xpath=//div[@id='input-card-no-container']/div[2]/label", "xpath:idRelative"],
+        ["xpath=//div[2]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Invalid card number')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8a66c6c5-df57-42e7-867a-48db34a99a16",
+      "comment": "Verifies that the correct error message is displayed.",
+      "command": "verifyText",
+      "target": "id=card-number_unhappy",
+      "targets": [
+        ["id=card-number_unhappy", "id"],
+        ["css=#card-number_unhappy", "css:finder"],
+        ["xpath=//label[@id='card-number_unhappy']", "xpath:attributes"],
+        ["xpath=//div[@id='input-card-no-container']/div[2]/label", "xpath:idRelative"],
+        ["xpath=//div[2]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Invalid card number')]", "xpath:innerText"]
+      ],
+      "value": "Invalid card number"
+    }, {
+      "id": "6f30660d-11a9-491b-a3fd-0e0c948157fd",
+      "comment": "Clicks outside the error message area.",
+      "command": "click",
+      "target": "css=.page-container",
+      "targets": [
+        ["css=.page-container", "css:finder"],
+        ["xpath=//section/section", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "90a72b6f-d6a4-46bd-be30-99e79b20bf7c",
+      "comment": "Closes the card validation error popup.",
+      "command": "click",
+      "target": "css=.data-card__close",
+      "targets": [
+        ["css=.data-card__close", "css:finder"],
+        ["xpath=//aside[@onclick='UIHelper.returnToMerchantPage()']", "xpath:attributes"],
+        ["xpath=//aside", "xpath:position"],
+        ["xpath=//aside[contains(.,'×')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "02e610b9-7741-41fa-b110-e1679a15f011",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["1dc9d6ec-36bc-4d84-9b6b-c7b33cc013fa"]
+  }],
+  "urls": ["https://www.konga.com/"],
+  "plugins": []
+}

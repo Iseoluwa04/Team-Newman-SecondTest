@@ -1,0 +1,31 @@
+{
+  "info": {
+    "_postman_id": "4cb6f947-4343-4fc4-85c8-a5fbebfc742a",
+    "name": "GET",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "SECOND ATTEMPT @GET",
+      "id": "d86a64b6-16ac-49fe-837e-b76cdba063ef",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{New Baseurl}}/regres.in/",
+          "host": [
+            "{{New Baseurl}}"
+          ],
+          "path": [
+            "regres.in",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

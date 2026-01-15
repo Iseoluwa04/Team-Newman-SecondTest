@@ -1,0 +1,18 @@
+{
+  "info": {
+    "_postman_id": "4d9c59e9-dfee-411e-a3e0-5b7792fdb40f",
+    "name": "single user",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "REQRES",
+      "id": "4186843a-f140-4d45-9704-f00bd81389d1",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}

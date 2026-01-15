@@ -1,0 +1,39 @@
+{
+  "info": {
+    "_postman_id": "0475ed6d-379c-48f7-a02c-84adcc8d9a2e",
+    "name": "Fraudwatch 360 created by Iseoluwa",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "https://dev-api.fraudwatch360.com/api-docs",
+      "id": "f94c4ed6-04fe-4b2d-a4d4-f53a664dd70e",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://dev-api.fraudwatch360.com/api-docs",
+          "protocol": "https",
+          "host": [
+            "dev-api",
+            "fraudwatch360",
+            "com"
+          ],
+          "path": [
+            "api-docs"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

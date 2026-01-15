@@ -1,0 +1,307 @@
+{
+  "info": {
+    "_postman_id": "0c61ad98-7846-4327-a229-58f6c869927b",
+    "name": "The QA School",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Student",
+      "item": [
+        {
+          "name": "delete Student",
+          "id": "e968ccb9-6d33-46fc-9977-d8cd406fcb6c",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "1180|1KX74PYrIn6hUP3VchEqIh4saKcq4jh4wSsinhUo2049a524",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{WORKSHOP VARIABLE}}/api/students/{{student_id}}",
+              "host": [
+                "{{WORKSHOP VARIABLE}}"
+              ],
+              "path": [
+                "api",
+                "students",
+                "{{student_id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Student",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Response status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "",
+                  "pm.test(\"Response time is less than 500ms\", function () {",
+                  "  pm.expect(pm.response.responseTime).to.be.below(500);",
+                  "});",
+                  "",
+                  "",
+                  "pm.test(\"Validate the schema of the response body\", function () {",
+                  "    const responseData = pm.response.json();",
+                  "",
+                  "    pm.expect(responseData).to.be.an('object');",
+                  "    pm.expect(responseData).to.have.property('id');",
+                  "    pm.expect(responseData).to.have.property('name');",
+                  "    pm.expect(responseData).to.have.property('age');",
+                  "    pm.expect(responseData).to.have.property('email');",
+                  "    pm.expect(responseData).to.have.property('address');",
+                  "    pm.expect(responseData).to.have.property('phone');",
+                  "});",
+                  "pm.test(\"Request execution time is less than 1000ms\", function () {",
+                  "    pm.expect(pm.info.requestExecutionTime).to.be.below(1000);",
+                  "});",
+                  "pm.test(\"Request execution time is less than 1000ms\", function () {",
+                  "    pm.expect(pm.info.requestExecutionTime).to.be.below(1000);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "id": "d8cbc66f-adf6-4402-be3d-86aefb2c7ec7"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "id": "5af5e6d0-d57d-4f32-becb-b948860e80ed"
+              }
+            }
+          ],
+          "id": "2e040ddd-8c98-4a07-8f2d-93db54f404a1",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n  \"firstName\": \"Tunmise\"\n  \n  \n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{WORKSHOP VARIABLE}}/api/students/{{student_id}}",
+              "host": [
+                "{{WORKSHOP VARIABLE}}"
+              ],
+              "path": [
+                "api",
+                "students",
+                "{{student_id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add student",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "// Generate 8-digit suffix for phone number",
+                  "const suffix = Math.floor(10000000 + Math.random() * 90000000); // Always 8 digits",
+                  "",
+                  "",
+                  "// Define random course and level",
+                  "const levels = [\"100\", \"200\", \"300\", \"400\", \"500\", \"600\", \"700\"];",
+                  "",
+                  "const courses = [\"Computer Science\", \"Software Engineering\", \"Business Administration, Physics, Geography, Medicine, Demography\"];",
+                  "",
+                  "// Set environment variables",
+                  "pm.environment.set(\"phoneNumber\", \"080\" + suffix);",
+                  "pm.environment.set(\"course\", courses[Math.floor(Math.random() * courses.length)]);",
+                  "pm.environment.set(\"level\", levels[Math.floor(Math.random() * levels.length)]);",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "// // Generate request body dynamically",
+                  "// const firstName = pm.environment.get(\"firstName\") || \"DefaultFirstName\";",
+                  "// const lastName = pm.environment.get(\"lastName\") || \"DefaultLastName\";",
+                  "// const email = pm.environment.get(\"email\") || \"default@example.com\";",
+                  "// const phoneNumber = pm.environment.get(\"phoneNumber\") || \"12345678900\";",
+                  "// const course = pm.environment.get(\"course\") || \"DefaultCourse\";",
+                  "// const level = pm.environment.get(\"level\") || \"DefaultLevel\";",
+                  "",
+                  "// // Create the request body object",
+                  "// const requestBody = {",
+                  "//     firstName: firstName,",
+                  "//     lastName: lastName,",
+                  "//     email: email,",
+                  "//     phoneNumber: phoneNumber,",
+                  "//     course: course,",
+                  "//     level: level",
+                  "// };",
+                  "",
+                  "// // Set the request body as raw JSON string",
+                  "// pm.request.body.raw = JSON.stringify(requestBody);",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "id": "e889ea35-b6e5-4019-86c8-23631fb8f43e"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let response = pm.response.json();",
+                  "let value = response.data.id;",
+                  "",
+                  "pm.environment.set(\"student_id\", value);",
+                  "console.log(value);",
+                  "",
+                  "pm.test(\"Response status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.equal(201);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time is less than 500ms\", function () {",
+                  "  pm.expect(pm.response.responseTime).to.be.below(500);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has the required fields\", function () {",
+                  "    const responseData = pm.response.json();",
+                  "    ",
+                  "    pm.expect(responseData).to.be.an('object');",
+                  "    const requiredFields = [\"id\", \"first_name\", \"last_name\", \"email\", \"phone_number\", \"course\", \"level\", \"created_at\"];",
+                  "    ",
+                  "    requiredFields.forEach(field => {",
+                  "        pm.expect(responseData).to.have.property(field);",
+                  "    });",
+                  "});",
+                  "",
+                  "pm.test(\"Email is in a valid format\", function () {",
+                  "  const responseData = pm.response.json();",
+                  "  ",
+                  "  pm.expect(responseData).to.be.an('object');",
+                  "  pm.expect(responseData.data.email).to.be.a('string').and.to.match(/\\S+@\\S+\\.\\S+/);",
+                  "});",
+                  "",
+                  "pm.test(\"Address field can be null or a non-empty string\", function () {",
+                  "    const responseData = pm.response.json();",
+                  "",
+                  "    pm.expect(responseData).to.be.an('object');",
+                  "    pm.expect(responseData).to.have.property('data');",
+                  "    pm.expect(responseData.data).to.have.property('address').that.is.a('string').or.to.be.null;",
+                  "});",
+                  "",
+                  "pm.test(\"Student must exist with a level\", function () {",
+                  "    const responseData = pm.response.json();",
+                  "",
+                  "    pm.expect(responseData).to.be.an('object');",
+                  "    pm.expect(responseData.data).to.have.property('level');",
+                  "    pm.expect(responseData.data.level).to.exist;",
+                  "});",
+                  "",
+                  " // Changed from Student_id to value",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "id": "9e64016a-f4a4-44a5-8e85-3a4b498963ee"
+              }
+            }
+          ],
+          "id": "744c9d25-8966-45a6-b5ae-b4f791002a83",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"email\": \"{{$randomEmail}}\",\n  \"phoneNumber\": \"{{phoneNumber}}\",\n  \"course\": \"{{course}}\",\n  \"level\": \"{{level}}\"\n\n}\n\n\n// {\n//   \"firstName\": \"Tunmise\",\n//   \"lastName\": \"Adebowale\",\n//   \"email\": \"tunmise@gmail.com\",\n//   \"phoneNumber\": \"08138610778\",\n//   \"course\": \"Computer Science\",\n//   \"level\": \"100\"\n\n// }\n\n\n\n\n\n\n\n// {\n//   \"firstName\": \"{{firstName}}\",\n//   \"lastName\": \"{{lastName}}\",\n//   \"email\": \"{{email}}\",\n//   \"phoneNumber\": \"{{phoneNumber}}\",\n//   \"course\": \"{{course}}\",\n//   \"level\": \"{{level}}\"\n// }\n\n\n\n\n\n\n\n\n\n\n// {\n//   \"firstName\": \"John\",\n//   \"lastName\": \"Doe\",\n//   \"email\": \"john.doe@example.com\",\n//   \"phoneNumber\": \"1234567890\",\n//   \"course\": \"Mathematics\",\n//   \"level\": \"200\"\n// }\n\n// {\n//   \"firstName\": \"Eberechi\",\n//   \"lastName\": \"Nkemchor\",\n//   \"email\": \"Eberechi@gmail.com\",\n//   \"phoneNumber\": \"08012345678\",\n//   \"course\": \"Computer Science\",\n//   \"level\": \"500\"\n// }\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{WORKSHOP VARIABLE}}/api/students",
+              "host": [
+                "{{WORKSHOP VARIABLE}}"
+              ],
+              "path": [
+                "api",
+                "students"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Fetch all students",
+          "id": "f72b1efd-f826-495e-8c85-4d92334b0a40",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{WORKSHOP VARIABLE}}/api/students",
+              "host": [
+                "{{WORKSHOP VARIABLE}}"
+              ],
+              "path": [
+                "api",
+                "students"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "fe58992a-6d6a-42c4-ba8c-c4d6532914d5"
+    },
+    {
+      "name": "Courses",
+      "item": [],
+      "id": "66e1dc8d-7520-440c-95fb-bc3473c8ad7e"
+    },
+    {
+      "name": "Payments",
+      "item": [],
+      "id": "64f019e2-c33e-4b33-9e07-685113f53fb2"
+    }
+  ]
+}

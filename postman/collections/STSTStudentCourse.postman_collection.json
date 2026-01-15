@@ -1,0 +1,655 @@
+{
+  "info": {
+    "_postman_id": "8864c124-920f-4ff3-86e9-c905ed1fd9ab",
+    "name": "STSTStudentCourse",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Todo Entries",
+      "item": [
+        {
+          "name": "Get All Todo Entries",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "ec5af2bd-a33b-493a-af25-48f0276e7566",
+                "exec": [
+                  "pm.test(\"Status code should be 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "id": "04f6f00c-6afb-406b-81a9-d2d4af0b941a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://demo.fusio-project.org/index.php",
+              "protocol": "https",
+              "host": [
+                "demo",
+                "fusio-project",
+                "org"
+              ],
+              "path": [
+                "index.php"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "2bc9a3ed-7bf1-412d-9937-8b34b2d2982e",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "ec0409e5-4599-4746-9569-b4881d80298b",
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "109a793d-3fca-4b66-99fa-500f3eb05888",
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Get All Entries",
+      "item": [
+        {
+          "name": "Get All Entries",
+          "id": "c6adac93-1dbd-4ba2-8d7e-e30fc827653f",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://demo.fusio-project.org/index.php/",
+              "protocol": "https",
+              "host": [
+                "demo",
+                "fusio-project",
+                "org"
+              ],
+              "path": [
+                "index.php",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "https://demo.fusio-project.org/index.php/"
+          },
+          "response": []
+        }
+      ],
+      "id": "12ac416a-75b7-45d3-83f4-ef54c9d73e2a"
+    },
+    {
+      "name": "Get entry per ID",
+      "item": [
+        {
+          "name": "Get entry per ID - Valid ID",
+          "id": "7d1804db-2b8f-4965-bfc9-40517e52b4c0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://demo.fusio-project.org/index.php",
+              "protocol": "https",
+              "host": [
+                "demo",
+                "fusio-project",
+                "org"
+              ],
+              "path": [
+                "index.php"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "https://demo.fusio-project.org/index.php/todo/:todo_id"
+          },
+          "response": []
+        },
+        {
+          "name": "Get entry per ID - Invalid ID(params not using TODO ID)",
+          "id": "31ff8f22-df4a-49ba-a06f-8cdf1c149dca",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://demo.fusio-project.org/",
+              "protocol": "https",
+              "host": [
+                "demo",
+                "fusio-project",
+                "org"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "https://demo.fusio-project.org/index.php/todo/:todo_id"
+          },
+          "response": []
+        }
+      ],
+      "id": "5e0ec6be-ace5-47c5-be81-28105d52021e"
+    },
+    {
+      "name": "Get Books",
+      "item": [
+        {
+          "name": "Get All Books",
+          "id": "8f465cc8-2105-4037-bc85-1eb099de8a35",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "540bd43cf706368d43ecbfd49df5a059c92c9f3306de459bf39c3a29b96ebfe5",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://simple-books-api.glitch.me/books",
+              "protocol": "https",
+              "host": [
+                "simple-books-api",
+                "glitch",
+                "me"
+              ],
+              "path": [
+                "books"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Books by ID",
+          "id": "a2565df1-df50-4697-af89-5c2a1c1cafc1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://simple-books-api.glitch.me/books/:bookId",
+              "protocol": "https",
+              "host": [
+                "simple-books-api",
+                "glitch",
+                "me"
+              ],
+              "path": [
+                "books",
+                ":bookId"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": "",
+                  "disabled": true
+                }
+              ],
+              "variable": [
+                {
+                  "key": "bookId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Books by Type",
+          "id": "2e286a2f-c46b-455f-89da-9f012a8ff033",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://simple-books-api.glitch.me/books?type=fiction",
+              "protocol": "https",
+              "host": [
+                "simple-books-api",
+                "glitch",
+                "me"
+              ],
+              "path": [
+                "books"
+              ],
+              "query": [
+                {
+                  "key": "type",
+                  "value": "fiction"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "2f9da9e5-bcc2-4b7c-8c9e-193ccbf07322"
+    },
+    {
+      "name": "Place a book order",
+      "item": [
+        {
+          "name": "Place a book order - using book ID",
+          "id": "261b7e78-56e6-4f9f-8059-4c1fb96300bb",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "540bd43cf706368d43ecbfd49df5a059c92c9f3306de459bf39c3a29b96ebfe5",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"bookId\": 1,\n    \"customerName\": \"Testify Academy\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://simple-books-api.glitch.me/orders",
+              "protocol": "https",
+              "host": [
+                "simple-books-api",
+                "glitch",
+                "me"
+              ],
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "931b9713-6664-4f0d-85a3-ada643ff6fda"
+    },
+    {
+      "name": "Get an order",
+      "item": [
+        {
+          "name": "Get all orders",
+          "id": "df5aba7b-d78d-4bd8-99b6-379c13fc2a27",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "540bd43cf706368d43ecbfd49df5a059c92c9f3306de459bf39c3a29b96ebfe5",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://simple-books-api.glitch.me/orders",
+              "protocol": "https",
+              "host": [
+                "simple-books-api",
+                "glitch",
+                "me"
+              ],
+              "path": [
+                "orders"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get an order - using orderID",
+          "id": "cfcd9a31-38a6-45d1-a7a1-9e5be1a21548",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "540bd43cf706368d43ecbfd49df5a059c92c9f3306de459bf39c3a29b96ebfe5",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://simple-books-api.glitch.me/orders/:orderId",
+              "protocol": "https",
+              "host": [
+                "simple-books-api",
+                "glitch",
+                "me"
+              ],
+              "path": [
+                "orders",
+                ":orderId"
+              ],
+              "variable": [
+                {
+                  "key": "orderId",
+                  "value": "AaX7WGCUeHH3lRwGRh57M"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "a82fffa4-c6d4-4320-8b86-b95bd7f84c52"
+    },
+    {
+      "name": "Update an order",
+      "item": [
+        {
+          "name": "Update an order",
+          "id": "6d22994d-7c72-409a-9bec-a5052aa80b4f",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "540bd43cf706368d43ecbfd49df5a059c92c9f3306de459bf39c3a29b96ebfe5",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"bookId\": 1,\n    \"customerName\": \"Testify Academy\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://simple-books-api.glitch.me/orders/",
+              "protocol": "https",
+              "host": [
+                "simple-books-api",
+                "glitch",
+                "me"
+              ],
+              "path": [
+                "orders",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "73f2ef42-19e5-49f5-a8ba-7d14ff6203d9"
+    },
+    {
+      "name": "Delete an order",
+      "item": [
+        {
+          "name": "Delete an order",
+          "id": "21059bc0-34b9-4f55-8b03-665f08eda5cc",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "540bd43cf706368d43ecbfd49df5a059c92c9f3306de459bf39c3a29b96ebfe5",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://simple-books-api.glitch.me/orders/:orderId",
+              "protocol": "https",
+              "host": [
+                "simple-books-api",
+                "glitch",
+                "me"
+              ],
+              "path": [
+                "orders",
+                ":orderId"
+              ],
+              "variable": [
+                {
+                  "key": "orderId",
+                  "value": "rObASEWYlVrRX6cTAEgbt"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "3b2813c9-c783-420d-a6cb-4da969d7e0a3"
+    },
+    {
+      "name": "Register API Client",
+      "id": "420d3e35-c64c-4d3d-ab44-31d0654030d3",
+      "request": {
+        "auth": {
+          "type": "oauth2",
+          "oauth2": [
+            {
+              "key": "accessTokenUrl",
+              "value": "https://demo.fusio-project.org/",
+              "type": "string"
+            },
+            {
+              "key": "tokenName",
+              "value": "Authority",
+              "type": "string"
+            },
+            {
+              "key": "client_authentication",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "grant_type",
+              "value": "client_credentials",
+              "type": "string"
+            },
+            {
+              "key": "addTokenTo",
+              "value": "header",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n   \"clientName\": \"Ibironke\",\n   \"clientEmail\": \"ibironkeyekinni@gmail.com\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://simple-books-api.glitch.me/api-clients/",
+          "protocol": "https",
+          "host": [
+            "simple-books-api",
+            "glitch",
+            "me"
+          ],
+          "path": [
+            "api-clients",
+            ""
+          ],
+          "query": [
+            {
+              "key": "",
+              "value": null,
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get API Status",
+      "id": "0dd61cf1-ee7f-4c9c-80f2-10b8c2e09446",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://simple-books-api.glitch.me/status",
+          "protocol": "https",
+          "host": [
+            "simple-books-api",
+            "glitch",
+            "me"
+          ],
+          "path": [
+            "status"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
