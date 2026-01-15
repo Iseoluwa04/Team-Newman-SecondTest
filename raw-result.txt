@@ -1,0 +1,147 @@
+newman
+
+STSTStudentCourse
+
+□ Get All Todo Entries
+└ Get All Todo Entries
+  GET https://demo.fusio-project.org/index.php [errored]
+     connect ETIMEDOUT 212.132.101.98:443
+  2. Status code should be 200
+
+□ Get All Entries
+└ Get All Entries
+  GET https://demo.fusio-project.org/index.php/ [errored]
+     connect ETIMEDOUT 212.132.101.98:443
+
+□ Get entry per ID
+└ Get entry per ID - Valid ID
+  GET https://demo.fusio-project.org/index.php [200 OK, 2.53kB, 5.3s]
+
+└ Get entry per ID - Invalid ID(params not using TODO ID)
+  GET https://demo.fusio-project.org/ [200 OK, 2.53kB, 316ms]
+
+□ Get Books
+└ Get All Books
+  GET https://simple-books-api.glitch.me/books [200 OK, 1.16kB, 2.5s]
+
+└ Get Books by ID
+  GET https://simple-books-api.glitch.me/books/1 [errored]
+     connect ETIMEDOUT 199.232.58.59:443
+
+└ Get Books by Type
+  GET https://simple-books-api.glitch.me/books?type=fiction [errored]
+     connect ETIMEDOUT 199.232.58.59:443
+
+□ Place a book order
+└ Place a book order - using book ID
+  POST https://simple-books-api.glitch.me/orders [errored]
+     connect ETIMEDOUT 199.232.58.59:443
+
+□ Get an order
+└ Get all orders
+  GET https://simple-books-api.glitch.me/orders [errored]
+     getaddrinfo ENOTFOUND simple-books-api.glitch.me
+
+└ Get an order - using orderID
+  GET https://simple-books-api.glitch.me/orders/AaX7WGCUeHH3lRwGRh57M [errored]
+     getaddrinfo ENOTFOUND simple-books-api.glitch.me
+
+□ Update an order
+└ Update an order
+  POST https://simple-books-api.glitch.me/orders/ [errored]
+     getaddrinfo ENOTFOUND simple-books-api.glitch.me
+
+□ Delete an order
+└ Delete an order
+  DELETE https://simple-books-api.glitch.me/orders/rObASEWYlVrRX6cTAEgbt [errored]
+     getaddrinfo ENOTFOUND simple-books-api.glitch.me
+
+→ Register API Client
+  POST https://simple-books-api.glitch.me/api-clients/ [errored]
+     getaddrinfo ENOTFOUND simple-books-api.glitch.me
+
+→ Get API Status
+  GET https://simple-books-api.glitch.me/status [errored]
+     getaddrinfo ENOTFOUND simple-books-api.glitch.me
+
+┌─────────────────────────┬───────────────────┬───────────────────┐
+│                         │          executed │            failed │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│              iterations │                 1 │                 0 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│                requests │                14 │                11 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│            test-scripts │                11 │                 0 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│      prerequest-scripts │                 0 │                 0 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│              assertions │                 1 │                 1 │
+├─────────────────────────┴───────────────────┴───────────────────┤
+│ total run duration: 2m 6s                                       │
+├─────────────────────────────────────────────────────────────────┤
+│ total data received: 4.77kB (approx)                            │
+├─────────────────────────────────────────────────────────────────┤
+│ average response time: 1648ms [min: 316ms, max: 5.3s, s.d.: 2s] │
+└─────────────────────────────────────────────────────────────────┘
+
+[31m   # [39m[31m failure        [39m[31m detail                                                   [39m
+[90m     [39m[90m                [39m[90m                                                          [39m
+ 01.  Error                                                                    
+                      connect ETIMEDOUT 212.132.101.98:443                     
+                      at request                                               
+                      inside ""                                                
+[90m     [39m[90m                [39m[90m                                                          [39m
+ 02.  AssertionError  Status code should be 200                                
+                      expected PostmanResponse{ …(5) } to have property 'code' 
+                      at assertion:0 in test-script                            
+                      inside "Get All Todo Entries / Get All Todo Entries"     
+[90m     [39m[90m                [39m[90m                                                          [39m
+ 03.  Error                                                                    
+                      connect ETIMEDOUT 212.132.101.98:443                     
+                      at request                                               
+                      inside ""                                                
+[90m     [39m[90m                [39m[90m                                                          [39m
+ 04.  Error                                                                    
+                      connect ETIMEDOUT 199.232.58.59:443                      
+                      at request                                               
+                      inside ""                                                
+[90m     [39m[90m                [39m[90m                                                          [39m
+ 05.  Error                                                                    
+                      connect ETIMEDOUT 199.232.58.59:443                      
+                      at request                                               
+                      inside ""                                                
+[90m     [39m[90m                [39m[90m                                                          [39m
+ 06.  Error                                                                    
+                      connect ETIMEDOUT 199.232.58.59:443                      
+                      at request                                               
+                      inside ""                                                
+[90m     [39m[90m                [39m[90m                                                          [39m
+ 07.  Error                                                                    
+                      getaddrinfo ENOTFOUND simple-books-api.glitch.me         
+                      at request                                               
+                      inside ""                                                
+[90m     [39m[90m                [39m[90m                                                          [39m
+ 08.  Error                                                                    
+                      getaddrinfo ENOTFOUND simple-books-api.glitch.me         
+                      at request                                               
+                      inside ""                                                
+[90m     [39m[90m                [39m[90m                                                          [39m
+ 09.  Error                                                                    
+                      getaddrinfo ENOTFOUND simple-books-api.glitch.me         
+                      at request                                               
+                      inside ""                                                
+[90m     [39m[90m                [39m[90m                                                          [39m
+ 10.  Error                                                                    
+                      getaddrinfo ENOTFOUND simple-books-api.glitch.me         
+                      at request                                               
+                      inside ""                                                
+[90m     [39m[90m                [39m[90m                                                          [39m
+ 11.  Error                                                                    
+                      getaddrinfo ENOTFOUND simple-books-api.glitch.me         
+                      at request                                               
+                      inside ""                                                
+[90m     [39m[90m                [39m[90m                                                          [39m
+ 12.  Error                                                                    
+                      getaddrinfo ENOTFOUND simple-books-api.glitch.me         
+                      at request                                               
+                      inside ""                                                
